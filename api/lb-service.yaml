@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: foodadvisor-backend
+spec:
+  selector:
+    app: foodadvisor
+    component: backend
+  ports:
+  - protocol: TCP
+    port: 1337
+    targetPort: 1337
+  type: LoadBalancer

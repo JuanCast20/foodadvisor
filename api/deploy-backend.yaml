@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foodadvisor-backend
+spec:
+  selector:
+    matchLabels:
+      app: foodadvisor
+      component: backend
+  template:
+    metadata:
+      labels:
+        app: foodadvisor
+        component: backend
+    spec:
+      containers:
+      - name: foodadvisor-api
+        image: juancastaneda20/foodadvisor-api
+        ports:
+          - containerPort: 1337
